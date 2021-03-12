@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's my Viewport?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="viewport">
+        <h3 class="viewport_title">
+            Your viewport is:
+        </h3>
+        <h1 class="viewport_dimensions">
+            Failed to determine dimensions because<br>JavaScript blocked by browser.
+        </h1>
+    </section>
+
+    <script>
+
+
+        function injectValues() {
+            vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+            document.querySelector('.viewport_dimensions').innerHTML = `
+                <span class=size>
+                    ${vw}
+                    </span>
+                &nbsp;&times;&nbsp;
+                <span class=size>
+                    ${vh}
+                </span>
+                `;
+        }
+
+        injectValues();
+        document.querySelector('.viewport_dimensions').classList.add('ifNotBlocked');
+
+
+        window.addEventListner('resize', injectValues)
+
+    </script>
+</body>
+
+</html>
