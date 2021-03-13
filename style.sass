@@ -31,3 +31,25 @@ body
 span.size::after
     content: 'PX'
     font-size: 0.4em
+
+
+
+@media screen and (max-width: 950px)
+    h1
+        display: flex
+        flex-direction: column
+    .ifNotBlocked
+        font-size: 5rem
+
+@media screen and (max-width: 400px)
+    .ifNotBlocked
+        font-size: 4rem
+    .viewport_title
+        font-size: 1.2rem
+@media screen and (max-width: 300px)
+    .viewport
+        padding: 2em
+    .ifNotBlocked
+        font-size: 3rem
+    .viewport_title
+        font-size: 1rem
